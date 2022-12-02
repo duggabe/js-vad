@@ -1,0 +1,46 @@
+<!-- Version-adaptive_documentation.mediawiki -->
+<h2>Concept</h2>
+I am looking into the possibility of making certain pages of our Wiki be adaptive to the user's GNU Radio version (or desired version) so that sections which don't apply would be hidden. This would make cleaner page presentations and reduce the clutter of unrelated information.
+
+<h2>Proof of Concept</h2>
+
+<h3>Phase 1</h3>
+
+<h4>Plan</h4>
+
+* Emulate MediaWiki with a local nodeJS program to allow non-destructive testing.
+* Create a test page with sections which can be hidden, based on a 'data-vad' attribute.
+* Create a form to enter a Version selection.
+* Before displaying the page, execute a script to show or hide sections based on the Version selection.
+
+<h4>Test results</h4>
+----
+<p>Page before any selections are made (i.e. all information is shown).</p>
+[[File:Phase1_all.png|800px]]
+----
+<p>Version selection before clicking 'Submit'.</p>
+[[File:Gr_version_select.png|799px]]
+----
+<p>Versions 3.9 and 3.10 selected. Note that the section for 3.8 is not shown (hidden).</p>
+[[File:Phase1_3-9.png|799px]]
+
+<h4>Conclusions</h4>
+# I have found that this methodology for hiding sections of a document is relatively easy.
+# There are several groups of pages which might benefit from this method:
+## Block docs
+## Tutorials
+## Installation instructions
+# Specific examples are:
+## [[QT_GUI_Chooser]]
+## [[Packet_Communications]]
+## [[LinuxInstall]]
+
+<h3>Phase 2</h3>
+
+<h4>Plan</h4>
+
+* Use a 'test' MediaWiki.
+* Put a version selection menu below the "Tools" group in the left-hand Navigation section.
+* Create a test page with HTML `<sections>` which can be hidden, based on a 'data-vad' attribute.
+* Embed a JavaScript link at the end of the page HTML to perform the requested selection.
+
