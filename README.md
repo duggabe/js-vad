@@ -1,8 +1,8 @@
 # Using JavaScript to modify MediaWiki pages
 
-This project is a Proof of Concept to make certain pages of the GNU Radio Wiki be adaptive to the user's GNU Radio software version (or desired version) so that sections which don't apply would be hidden. This would make cleaner page presentations and reduce the clutter of unrelated information.
+This project is a Proof of Concept to make certain pages of the [GNU Radio Wiki](https://wiki.gnuradio.org/index.php/Main_Page) be adaptive to the user's GNU Radio software version (or desired version) so that sections which don't apply would be hidden. This would make cleaner page presentations and reduce the clutter of unrelated information.
 
-The project is based on methods described in [js-html](https://github.com/duggabe/js-html).
+The project is called Version-adaptive Documentation (VAD). It based on methods described in [js-html](https://github.com/duggabe/js-html).
 
 ## Installation
 
@@ -31,6 +31,23 @@ git clone https://github.com/duggabe/js-vad.git
 * In the Navigation menu on the left, click one or more versions and then click 'Submit'.
 
 * The page should refresh with sections you did not choose hidden.
+
+## How to add HTML markup to make a Wiki page respond to the VAD script
+
+The fact that HTML can be used when editing a MediaWiki page makes it easy to add the elements used with VAD. The following instructions will apply to the completed project, but for Phase 1, they are only for testing.
+
+1. Open the desired page in Edit mode.
+2. Insert the following as the first line of text. This flags the page as having been marked up for VAD, and will generate the menu for version selection.
+```
+<article data-vad="gr_vad"></article>
+```
+3. For each section of content which applies specifically to one GNU Radio version, surround it with `<section data-vad="3.8">` (using the applicable version) and `</section>` lines. A section can include any amount of headings, paragraphs, and other content.
+
+Any portions of the page which apply to all GNU Radio versions should not be enclosed in section elements.
+
+Open `Phase_1_test.html` in a text editor to see how its sections are marked. If you wish, you can change the content between lines 28 and 44 to experiment on your own. Note that this is just a static page for the Phase 1 testing.
+
+The script in lines 45 and 46 are only for Phase 1. For Phase 2 and the real MediaWiki, the script will be inserted from the content of [MediaWiki:Common.js](https://wiki.gnuradio.org/index.php?title=MediaWiki:Common.js)
 
 ## References
 
