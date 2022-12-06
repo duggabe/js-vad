@@ -26,9 +26,9 @@ git clone https://github.com/duggabe/js-vad.git
 
 * Open your file manager and go to the `~/js-vad folder.
 
-* Open `Phase_1_test.html` in your browser to see the test page.
+* Open `Phase2_Message_Debug.html` in your browser to see the test page.
 
-* In the Navigation menu on the left, click one or more versions and then click 'Submit'.
+* In the Navigation menu on the left, click one of the versions and then click 'Submit'.
 
 * The page should refresh with sections you did not choose hidden.
 
@@ -36,18 +36,18 @@ git clone https://github.com/duggabe/js-vad.git
 
 The fact that HTML can be used when editing a MediaWiki page makes it easy to add the elements used with VAD. The following instructions will apply to the completed project, but for Phase 1, they are only for testing.
 
-1. Open the desired page in Edit mode.
+1. Open the desired MediaWiki page in Edit mode.
 2. Insert the following as the first line of text. This flags the page as having been marked up for VAD, and will generate the menu for version selection.
 ```
-<article data-vad="gr_vad"></article>
+<span data-vad="gr_vad"></span>
 ```
-3. For each section of content which applies specifically to one GNU Radio version, surround it with `<section data-vad="3.8">` (using the applicable version) and `</section>` lines. A section can include any amount of headings, paragraphs, and other content.
+3. For each section of content which applies specifically to one GNU Radio version, surround it with `<div data-vad="3.9">` (using the applicable version) and `</div>` lines. A section can include any amount of headings, paragraphs, and other content.
 
 Any portions of the page which apply to all GNU Radio versions should not be enclosed in section elements.
 
-Open `Phase_1_test.html` in a text editor to see how its sections are marked. If you wish, you can change the content between lines 28 and 44 to experiment on your own. Note that this is just a static page for the Phase 1 testing.
+Open `Phase2_Message_Debug.html` in a text editor to see how its sections are marked. If you wish, you can change the content between lines 28 and 69 to experiment on your own. Note that this is just a static page for the Phase 2 testing.
 
-The script in lines 45 and 46 are only for Phase 1. For Phase 2 and the real MediaWiki, the script will be inserted from the content of [MediaWiki:Common.js](https://wiki.gnuradio.org/index.php?title=MediaWiki:Common.js)
+The script in lines 70 and 71 is only for Phase 2 initial testing. For the real MediaWiki, the script will be inserted by MediaWiki from the content of [MediaWiki:Common.js](https://wiki.gnuradio.org/index.php?title=MediaWiki:Common.js)
 
 ## References
 

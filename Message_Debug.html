@@ -1,0 +1,69 @@
+<!-- Phase_1_test.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex">
+<meta name="author" content="Barry Duggan">
+<title>Message_Debug</title>
+<link rel="stylesheet" type="text/css" href="./dcsmail.css">
+</head>
+<body>
+<!-- Message_Debug.mediawiki -->
+<article data-vad="gr_vad"></article>
+<h3>Message_Debug</h3>
+
+<aside>
+<p>Tools<br>
+<hr></p>
+<ul class="vector-menu-content-list">
+  <li>What links here</li>
+  <li>Related changes</li>
+  <li>Upload file</li>
+  <li>Special pages</li>
+  <li>Printable version</li>
+  <li>Permanent link</li>
+  <li>Page information</li>
+</ul>
+</aside>
+
+<p>Debug block for the message passing system.</p>
+<p>The message debug block is used to capture and print or store messages as they are received. Any block that generates a message may connect that message port to one or more of the three message input ports of this debug block.</p>
+
+<section data-vad="3.8">
+<p>The message ports are:</p>
+<ul>
+<li>print: prints the message directly to standard out.</li>
+<li>store: stores the message in an internal vector. It works in conjunction with a message_debug::get_message(size_t i) call that allows us to retrieve message i afterward.</li>
+<li>print_pdu: specifically designed to handle formatted PDUs (see pdu.h). It discards messages that aren’t PDU pairs (or are null).</li>
+</ul>
+</section>
+
+<p>== Parameters ==</p>
+<p>None</p>
+<p>== Example Flowgraph == In this example, a Message Strobe block sends the string “Demo” once per second. It is displayed on the user terminal by the Message Debug block.</p>
+<p>[https://wiki.gnuradio.org/index.php?title=File:PUB_SUB_msg_demo.png]</p>
+<p>== Source Files ==</p>
+<dl>
+<dt>; C++ files</dt>
+<dd>[https://github.com/gnuradio/gnuradio/blob/master/gr-blocks/lib/message_debug_impl.cc]
+</dd>
+<dt>; Header files</dt>
+<dd>[https://github.com/gnuradio/gnuradio/blob/master/gr-blocks/lib/message_debug_impl.h]
+</dd>
+<dt>; Public header files</dt>
+<dd>[https://github.com/gnuradio/gnuradio/blob/master/gr-blocks/include/gnuradio/blocks/message_debug.h]
+</dd>
+<dt>; Block definition</dt>
+<dd>[https://github.com/gnuradio/gnuradio/blob/master/gr-blocks/grc/blocks_message_debug.block.yml]
+</dd>
+</dl>
+<p>[[Category:Block Docs]]</p>
+
+<script src="./phase1.js">
+</script>
+
+</body>
+</html>
+
+

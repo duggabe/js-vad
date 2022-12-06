@@ -1,0 +1,75 @@
+<!-- Phase2_Message_Debug.html -->
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8" />
+<meta name="robots" content="noindex">
+<meta name="author" content="Barry Duggan">
+<title>Phase2_Message_Debug</title>
+<link rel="stylesheet" type="text/css" href="./dcsmail.css">
+</head>
+<body>
+<span data-vad="gr_vad"></span>
+<h3>Phase1_Message_Debug</h3>
+
+<aside>
+<p>Tools<br>
+<hr></p>
+<ul class="vector-menu-content-list">
+  <li>What links here</li>
+  <li>Related changes</li>
+  <li>Upload file</li>
+  <li>Special pages</li>
+  <li>Printable version</li>
+  <li>Permanent link</li>
+  <li>Page information</li>
+</ul>
+</aside>
+
+<p><b>NOTE: This is a simulation of the Message Debug block doc with markup for the Version-adaptive_documentation project.</b></p>
+
+<p>Debug block for the message passing system.</p>
+
+<p>The message debug block is used to capture and print or store messages as they are received. Any block that generates a message may connect that message port to one or more of the three message input ports of this debug block.</p>
+
+<br><br><br><br><br>
+<h4> Parameters </h4>
+<hr>
+<div data-vad="3.9">
+<b>(''R''):</b> <a href="https://wiki.gnuradio.org/index.php/GNURadioCompanion#Variable_Controls">Run-time adjustable</a>
+<br>
+<code>Added in 3.9</code><br>
+<b>PDU Vectors (''R'')</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;On or Off - determines if the uniform vector is printed or not.
+</div>
+<h4> Messages </h4>
+<hr>
+<h4> Inputs </h4>
+<div data-vad="3.9">
+<h5> Version 3.9 </h5>
+<hr>
+<b>print</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Prints all messages to standard out. If the message is a PDU, it will receive special formatting and the <code>PDU Vectors</code> block parameter will determine if the uniform vector is printed or not.<br>
+<b>store</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Stores the message in an internal vector. It works in conjunction with a message_debug::get_message(size_t i) call that allows us to retrieve message i afterward.<br>
+<b>print_pdu</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;PDU messages are redirected to the <code>print</code> port. This is included for compatibility and is no longer recommended for use.<br>
+<br>
+</div>
+<div data-vad="3.8">
+<h5> Version 3.8 </h5>
+<hr>
+<b>print</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Prints the message to standard out.<br>
+<b>store</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Stores the message in an internal vector. It works in conjunction with a message_debug::get_message(size_t i) call that allows us to retrieve message i afterward.<br>
+<b>print_pdu</b><br>
+&nbsp;&nbsp;&nbsp;&nbsp;Specifically designed to handle formatted PDUs (see pdu.h). It discards messages that aren't PDU pairs (or are null).<br>
+</div>
+
+<script src="./phase2.js">
+</script>
+
+</body>
+</html>
+
