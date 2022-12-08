@@ -45,9 +45,9 @@ The fact that HTML can be used when editing a MediaWiki page makes it easy to ad
 
 Any portions of the page which apply to all GNU Radio versions should not be enclosed in section elements.
 
-Open `Phase2_Message_Debug.html` in a text editor to see how its sections are marked. If you wish, you can change the content between lines 28 and 69 to experiment on your own. Note that this is just a static page for the Phase 2 testing.
+Open `Phase2_Message_Debug.html` in a text editor to see how its sections are marked. If you wish, you can change the content between lines 28 and 77 to experiment on your own. Note that this is just a static page for the Phase 2 testing.
 
-The script in lines 70 and 71 is only for Phase 2 initial testing. For the real MediaWiki, the script will be inserted by MediaWiki from the content of [MediaWiki:Common.js](https://wiki.gnuradio.org/index.php?title=MediaWiki:Common.js)
+The script in lines 78 and 79 is only for Phase 2 initial testing. For the real MediaWiki, the script will be inserted by MediaWiki from the content of [MediaWiki:Common.js](https://wiki.gnuradio.org/index.php?title=MediaWiki:Common.js)
 
 ## References
 

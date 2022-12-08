@@ -82,7 +82,8 @@ function phase2()
             }   // end found <span>
         }   // first pass
     else
-        {   // have selections
+        {   // have selections / second pass
+        console.log ("phase2 second pass");
         if (p1 != null)
             {
             gr_version += p1;
@@ -105,11 +106,64 @@ function phase2()
             gr_version = temp;
             }
         var _nav = document.getElementsByClassName("vector-menu-content-list");
+        var _br = document.createElement("br");
+        _nav[0].appendChild (_br);
         var _li1 = document.createElement("li");
-        _li1.innerHTML = "<br>Displaying Version(s): " + gr_version;
-        _nav[0].appendChild (_li1);
-
-        console.log ("phase1()");
+        _li1.innerHTML = "<br>Customize this page:";
+        var _form1 = document.createElement("form");
+        _form1.setAttribute("action", "#");       // action
+// ver1 3.8
+                var _inp1 = document.createElement("input");
+                _inp1.setAttribute("type", "checkbox");
+                _inp1.setAttribute("id", "_ver1");
+                _inp1.setAttribute("name", "ver1");
+                _inp1.setAttribute("value", "3.8");
+                if ((gr_version.indexOf ("3.8")) != -1)      // found
+                    _inp1.setAttribute ("checked", "true");
+                _form1.appendChild (_inp1);
+                var _lbl1 = document.createElement("label");
+                _lbl1.setAttribute("for", "_ver1");
+                _lbl1.innerHTML = " 3.8";
+                _form1.appendChild (_lbl1);
+                var _nbsp = document.createTextNode("  ");
+                _form1.appendChild (_nbsp);
+// ver2 3.9
+                var _inp2 = document.createElement("input");
+                _inp2.setAttribute("type", "checkbox");
+                _inp2.setAttribute("id", "_ver2");
+                _inp2.setAttribute("name", "ver2");
+                _inp2.setAttribute("value", "3.9");
+                if ((gr_version.indexOf ("3.9")) != -1)      // found
+                    _inp2.setAttribute ("checked", "true");
+                _form1.appendChild (_inp2);
+                var _lbl2 = document.createElement("label");
+                _lbl2.setAttribute("for", "_ver2");
+                _lbl2.innerHTML = " 3.9";
+                _form1.appendChild (_lbl2);
+                _form1.appendChild (_nbsp);
+// ver3 3.10
+                var _inp3 = document.createElement("input");
+                _inp3.setAttribute("type", "checkbox");
+                _inp3.setAttribute("id", "_ver3");
+                _inp3.setAttribute("name", "ver3");
+                _inp3.setAttribute("value", "3.10");
+                if ((gr_version.indexOf ("3.10")) != -1)      // found
+                    _inp3.setAttribute ("checked", "true");
+                _form1.appendChild (_inp3);
+                var _lbl3 = document.createElement("label");
+                _lbl3.setAttribute("for", "_ver3");
+                _lbl3.innerHTML = " 3.10";
+                _form1.appendChild (_lbl3);
+                _form1.appendChild(_br);
+                _form1.appendChild(_br);
+// submit
+                var _inp4 = document.createElement("input");
+                _inp4.setAttribute("type", "submit");
+                _inp4.setAttribute("value", "Submit");
+                _form1.appendChild (_inp4);
+                _li1.appendChild (_form1);
+                _nav[0].appendChild (_li1);
+//
         if (gr_version.length > 0)
             {
             var element = document.getElementsByTagName("div");
@@ -122,7 +176,7 @@ function phase2()
                     element[i].setAttribute ("hidden", "true");
                     }
                 }
-            }   // not "ALL"
-        }   // end have selections
+            }   // end have selections
+        }   // second pass
     }
 
